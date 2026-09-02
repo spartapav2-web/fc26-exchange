@@ -42,7 +42,7 @@ jobs:
           tags: ghcr.io/${{ github.repository_owner }}/fc26-exchange-frontend:latest
 
       - name: Render deploy (optional)
-        if: secrets.RENDER_SERVICE_ID && secrets.RENDER_API_KEY
+        if: ${{ secrets.RENDER_SERVICE_ID && secrets.RENDER_API_KEY }}
         uses: render-examples/deploy-to-render@v1
         with:
           api_key: ${{ secrets.RENDER_API_KEY }}
